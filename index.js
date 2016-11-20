@@ -12,6 +12,11 @@ gsheets.getWorksheet(config.gsheetsKey, config.gsheetsWorksheet, function(err, r
     console.dir(err)
   }
   // Do stuff to object.
+  console.dir(JSON.stringify(result.data))
+  // Iterating through rows of data from spreadsheet
+  //for (var i=0; i<result.data.length; i++) {
+  //  var obj = result.data[i]
+  //}
   
   // Store object in JSON file
 
