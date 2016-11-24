@@ -3,7 +3,7 @@ const gsheets = require('gsheets')
 const fs = require('fs-extra')
 const JSONStream = require('JSONStream')
 const gsheetsKey = '15htqMLMdbxi4csfmOyR1r6aMfZO2R2bOBacS834kfvU'
-const gsheetsWorksheet = 'test'
+const gsheetsWorksheet = 'redwine' // 'products' (all), 'redwine', 'whitewine', 'sparkling' and 'test' available so far
 const columns = ['Varenummer','Varenavn','Volum','Pris','Literpris','Varetype','Farge','Lukt','Smak','Land','Distsrikt','Underdistrikt','Argang','Rastoff','Alkohol']
 
 // Get csv-file as 'data' (object)
@@ -12,16 +12,14 @@ gsheets.getWorksheet(gsheetsKey, gsheetsWorksheet, function(err, result) {
     console.dir(err)
   }
   // Iterating through rows of data from spreadsheet
-//  for (var i=0; i<result.data.length; i++) {
-  for (var i=0; i<1; i++) {
-    //var obj = result.data[i]
-    console.log(result.data[i])
-    for (var k in result.data[i]){
-      if (typeof result.data[i][k] !== 'function') {
-        console.log("Key is " + k + ", value is" + result.data[i][k]);
+  for (var i=0; i<result.data.length; i++) {
+    console.log(' ')
+    for (var key in result.data[i]){
+      if (typeof result.data[i][key] !== 'function' && columns.indexOf(key) > -1) {
+        // key in object exists, and matches something in columns array
+        console.log(key + ' ' + result.data[i][key]);
+        // add to obj and write/add obj to JSON stream file
       }
     }
   }
-  // Store object in JSON file
-
 })
