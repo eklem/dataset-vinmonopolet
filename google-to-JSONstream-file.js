@@ -4,7 +4,7 @@ const fs = require('fs-extra')
 const JSONStream = require('JSONStream')
 const file = 'dataset-vinmonopolet.str'
 const gsheetsKey = '15htqMLMdbxi4csfmOyR1r6aMfZO2R2bOBacS834kfvU'// Gsheet's key to csv-products file converted to Gsheet
-const gsheetsWorksheet = 'sparkling' // 'products' (all), 'redwine', 'whitewine', 'sparkling' and 'test' available so far
+const gsheetsWorksheet = 'test' // 'products' (all), 'redwine', 'whitewine', 'sparkling' and 'test' available so far
 const columns = ['Varenummer','Varenavn','Volum','Pris','Literpris','Varetype','Farge','Lukt','Smak','Land','Distsrikt','Underdistrikt','Argang','Rastoff','Alkohol']
 
 // Get csv-file as 'data' (object)

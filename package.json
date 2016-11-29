@@ -1,0 +1,26 @@
+{
+  "name": "dataset-vinmonopolet",
+  "version": "0.0.1",
+  "description": "Dataset for testing search engine capabilities.",
+  "main": "dataset-vinmonopolet.str",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eklem/dataset-vinmonopolet.git"
+  },
+  "keywords": [
+    "norch",
+    "search-index",
+    "dataset",
+    "JSON",
+    "stream"
+  ],
+  "author": "Espen Klem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eklem/dataset-vinmonopolet/issues"
+  },
+  "homepage": "https://github.com/eklem/dataset-vinmonopolet#readme"
+}
