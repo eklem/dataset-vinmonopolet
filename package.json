@@ -1,6 +1,6 @@
 {
   "name": "dataset-vinmonopolet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dataset for testing search engine capabilities.",
   "main": "dataset-vinmonopolet.str",
   "scripts": {
