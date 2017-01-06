@@ -3,8 +3,9 @@ const gsheets = require('gsheets')
 const fs = require('fs-extra')
 const file = 'dataset-vinmonopolet.str'
 const gsheetsKey = '15htqMLMdbxi4csfmOyR1r6aMfZO2R2bOBacS834kfvU'// Gsheet's key to csv-products file converted to Gsheet
-const gsheetsWorksheet = 'products' // 'products' (all), 'redwine', 'whitewine', 'sparkling' and 'test' available so far
+const gsheetsWorksheet = 'test' // 'products' (all), 'redwine', 'whitewine', 'sparkling' and 'test' available so far
 const columns = ['Varenummer','Varenavn','Volum','Pris','Literpris','Varetype','Farge','Lukt','Smak','Land','Distsrikt','Underdistrikt','Argang','Rastoff','Alkohol']
+const filterColumns = 'Varetype'
 
 // Get csv-file as 'data' (object)
 gsheets.getWorksheet(gsheetsKey, gsheetsWorksheet, function(err, result) {
@@ -20,10 +21,16 @@ gsheets.getWorksheet(gsheetsKey, gsheetsWorksheet, function(err, result) {
       if (typeof result.data[i][key] !== 'function' && columns.indexOf(key) > -1) {
         // key in wine object exists, && matches something in columns array
         // Add key/value to wine object
-        wine[key] = result.data[i][key]
+        if (key === filterColumns) {
+          wine[key] = [result.data[i][key]]
+        }
+        else {
+          wine[key] = result.data[i][key]
+        }
+
       }
     }
-    //console.dir(JSON.stringify(wine))
+    console.dir(JSON.stringify(wine))
     output += JSON.stringify(wine)
     output += '\n'
   }
