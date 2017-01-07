@@ -3,7 +3,7 @@ const gsheets = require('gsheets')
 const fs = require('fs-extra')
 const file = 'dataset-vinmonopolet.str'
 const gsheetsKey = '15htqMLMdbxi4csfmOyR1r6aMfZO2R2bOBacS834kfvU'// Gsheet's key to csv-products file converted to Gsheet
-const gsheetsWorksheet = 'test' // 'products' (all), 'redwine', 'whitewine', 'sparkling' and 'test' available so far
+const gsheetsWorksheet = 'whitewine' // 'products' (all), 'redwine', 'whitewine', 'sparkling' and 'test' available so far
 const columns = ['Varenummer','Varenavn','Volum','Pris','Literpris','Varetype','Farge','Lukt','Smak','Land','Distsrikt','Underdistrikt','Argang','Rastoff','Alkohol']
 const filterColumns = 'Varetype'
 
